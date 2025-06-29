@@ -919,15 +919,10 @@ const DoctorPage: React.FC = () => {
           doctor_name: doctorName || 'Dr. Unknown',
           patient_name: patientParticipant?.name || 'Patient',
           medicine: medicine,
-          room_id: roomId,
-          consultation_date: new Date().toISOString(), // optional: aligns with your schema
-          created_at: new Date().toISOString(),        // optional: aligns with your schema
-          status: 'prescribed',                        // optional: a meaningful default
-          duration_minutes: Math.floor(Math.random() * 60), // optional/fake duration
-          consultation_notes: messages.map(msg => `${msg.senderName}: ${msg.text}`).join('\n') // optional
+          prescribed_at: new Date().toISOString(),
+          room_id: roomId
         }))
       );
-
 
       if (error) {
         console.error('Supabase Error:', error.message);
